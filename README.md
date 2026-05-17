@@ -88,19 +88,6 @@ Vocab_Flashcards_App/
 `-- .gitignore
 ```
 
-## Data Format
-
-The vocabulary list is stored in CSV format with `French` and `English` columns:
-
-```csv
-French,English
-partie,part
-histoire,history
-chercher,search
-seulement,only
-police,police
-```
-
 ## 🎓 Credits
 
 This project is part of the **100 Days of Code: The Complete Python Pro Bootcamp** learning path.
