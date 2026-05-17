@@ -17,9 +17,18 @@ else:
 def next_card():
     global current_card ,flip_timer
     window.after_cancel(flip_timer)
+    
+    if len(to_learn) == 0:
+        canvas.itemconfig(card_title, text="Congratulations!", fill="black")
+        canvas.itemconfig(card_word, text="You learned all words!", fill="black", font=("Ariel", 40, "bold"))
+        canvas.itemconfig(canvas_background, image=card_front_img)
+        right_button.config(state="disabled")
+        wrong_button.config(state="disabled")
+        return
+
     current_card = choice(to_learn)
     canvas.itemconfig(card_title, text= "French", fill="black")
-    canvas.itemconfig(card_word, text= current_card["French"], fill="black")
+    canvas.itemconfig(card_word, text= current_card["French"], fill="black", font=("Ariel", 60, "bold"))
     canvas.itemconfig(canvas_background, image= card_front_img)
     flip_timer = window.after(3000, func=flip_card)
 
